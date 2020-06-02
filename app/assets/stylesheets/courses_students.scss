@@ -1,0 +1,23 @@
+// Place all the styles related to the CoursesStudents controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons-child1 {
+    margin-right: 10px;
+    word-spacing: 20px;
+    
+}
+
+.buttons-child2 {
+    margin-right: 10px;
+    word-spacing: 20px;
+}
+
+.buttons-child3 {
+    word-spacing: 20px;
+}

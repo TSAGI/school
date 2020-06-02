@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>School</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+        <div id = "menu">
+          <%if current_student%>
+            <span style="color:gold", class="menu_item">Student: <%=current_student.first_name%>
+            <%=current_student.last_name%></span>
+            <%= link_to 'Log Out', destroy_student_session_path, method: "delete", class: "menu_item"%>
+            <%=link_to "My Courses", student_courses_path, class: "menu_item"%>
+          <%elsif current_teacher%>
+            <span style="color:gold", class="menu_item">Teacher: <%=current_teacher.first_name%>
+            <%=current_teacher.last_name%></span>
+            <%= link_to 'Log Out', destroy_teacher_session_path, method: "delete", class: "menu_item"%>
+            <%=link_to "My Courses", teacher_courses_path, class: "menu_item"%>
+          <%else%>
+            <%=link_to "Register", register_path, class: "menu_item"%>
+            <%=link_to "Log In", new_teacher_session_path, class: "menu_item"%>
+            <%=link_to "Courses", courses_path, class: "menu_item"%>
+          <%end%>
+          <%=link_to "About", about_path, class: "menu_item"%>
+        </div>
+  </body>
+</html>

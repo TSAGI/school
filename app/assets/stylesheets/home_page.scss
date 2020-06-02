@@ -1,0 +1,76 @@
+// Place all the styles related to the HomePage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.title {
+    text-align: center;
+    // font-family: 'Times New Roman', Times, serif;
+    background: linear-gradient(to bottom, #cfc09f 22%,#634f2c 24%, #cfc09f 26%, #cfc09f 27%,#ffecb3 40%,#3a2c0f 78%); 
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
+    color: rgb(19, 18, 18);
+    font-family: 'Playfair Display', serif;
+    // position: relative;
+	text-transform: uppercase;	
+	font-size: 36px;
+	margin: 0;
+	font-weight: 400;
+}
+
+.title:after {
+    background: none;
+    // content: attr(data-heading);
+    left: 0;
+	top: 0;
+    // z-index: -1;
+    // position: absolute;
+    text-shadow: 
+		-1px 0 1px #c6bb9f, 
+		0 1px 1px #c6bb9f, 
+		5px 5px 10px rgba(0, 0, 0, 0.4),
+		-5px -5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.mini_title {
+    text-align: center;
+    font-family: cursive;
+    color: silver;
+}
+
+.back_button {
+        display: inline-block;
+        // float: left;
+        // margin: 2px;
+        padding: 5px 5px;
+        font-size: 12px;
+        font-weight: bold;
+        white-space: normal;
+        width: 70px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: royalblue;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;        
+}
+      
+.back_button:hover {background-color: rgb(90, 123, 221)}
+      
+.back_button:active {
+    background-color: rgb(90, 123, 221);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.field {
+    color: rgb(248, 239, 188);
+    text-align: center;
+    padding: 10px;
+    
+}
+
+.actions {
+    text-align: center;
+}

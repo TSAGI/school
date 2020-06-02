@@ -1,0 +1,39 @@
+<h1 class = "title">Registration Form</h1>
+
+<p><%=link_to "Back to Home Page", root_path, class: "back_button"%>
+
+<%= form_for :teachers, url: teacher_registration_path do |f| %>
+
+<div class="mini_title">
+  <%=radio_button_tag(:register, "student", checked = true)%>Student
+  <%=radio_button_tag(:register, "teacher")%>Teacher
+</div>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name%>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name%>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email%>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up", class: "back_button" %>
+  </div>
+<% end%>
+

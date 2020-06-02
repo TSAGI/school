@@ -1,0 +1,26 @@
+<h1 class="title"><%= @course.name%></h1>
+
+<div class = "wrapper">
+    <p><%=link_to "Back to Courses", teacher_courses_path, class: "back_button"%></p>
+    <p><%=link_to "Back to Home Page", root_path, class: "back_button"%></p>
+</div>
+
+<div class="actions">
+    <%= link_to "Revise Course", edit_course_path(@course), class: "back_button" %>
+</div>
+
+<div class="container">
+    <div class="description">
+        <p>Description: <%= @course.description%></p>
+        <p>Day: Every <%= @course.day%> from <%=@course.time%>.</p>
+        <p>Date: <%= @course.date%>.</p>
+
+        <h4 class="enrolled">Students Enrolled in this Course</h4>
+        
+            <% @students.each do |s| %>
+            <% @registered = @selection.find_by(student_id: s.id) %>
+            <%if @registered%>
+                <p><%=s.first_name%> <%=s.last_name%></p>
+            <% end end %>
+    </div>
+</div>

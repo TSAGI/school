@@ -1,0 +1,11 @@
+<h1 class="title">Available Courses</h1>
+
+<p><%= link_to "Back to Home Page", root_path, class: "back_button"%></p>
+
+<div class="container">
+  <div>
+    <% @courses.each do |c| %>
+      <p><%=link_to c.name, course_path(c), class:"description"%> </p>
+    <% end %>
+  </div>
+</div>

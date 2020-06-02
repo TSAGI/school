@@ -1,0 +1,16 @@
+<h1 class="title">My Courses</h1>
+
+ <p><%=link_to "Back to Home Page", root_path, class: "back_button"%></p>
+
+<div class="container">
+  <div class="description">
+    <% @courses.each do |c| %>
+      <p><%=link_to c.name, new_courses_student_path(c), class:"description"%></p>
+    <% @registered = @selection.find_by(course_id: c.id) %>
+      <%if @registered%>
+          <div class="status"> Enrolled </div>
+      <%else%>
+          <div class="status"> Available </div>
+    <% end end %>
+  </div>
+</div>
