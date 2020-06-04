@@ -1,14 +1,15 @@
-<h1 class="title">Edit My Review of <%=@course.name%></h1>
-<div class = "wrapper">
-    <p><%=link_to "Back", new_courses_student_path(@course), class: "back_button"%></p>
-</div>
+<h1 class="mini_title">Edit My Review of <%=@course.name%></h1>
 
 <%= form_for [@course, @review] do |f| %>
   <div class = "field">
-    <%= f.label :message %><br>
+    <%= f.label :message, class: "card" %><br>
     <%= f.text_area :message, size: '50x5' %>
   </div>
-  <div class="actions">
+  <div class="buttons">
     <%=f.submit "Save", class: "back_button"%>
   </div>
+</div>
 <% end %>
+  <div class="buttons">
+    <p><%=link_to "Back", new_courses_student_path(@course), class: "back_button"%></p>
+  </div>

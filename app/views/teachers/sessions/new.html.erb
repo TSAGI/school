@@ -1,15 +1,13 @@
-<h2 class="title">Log in</h2>
-
-<p><%= link_to "Back to Home Page", root_path, class: "back_button"%></p>
+<h1 class="mini_title">Log in</h1>
 
 <%= form_for(:teachers, url: teacher_session_path) do |f| %>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email, class: "card" %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
+    <%= f.label :password, class: "card" %><br />
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
 

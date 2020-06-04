@@ -1,25 +1,25 @@
 <%= form_for @course do |f| %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, class: "card" %><br />
     <%= f.text_field :name%>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label :description, class: "card" %><br />
     <%= f.text_area :description, size: '50x5' %>
   </div>
   <div class="field">
-    <%= f.label :day %><br />
+    <%= f.label :day, class: "card" %><br />
     <%= f.text_field :day%>
   </div>
 
   <div class="field">
-    <%= f.label :time %><br />
+    <%= f.label :time, class: "card" %><br />
     <%= f.text_field :time %>
   </div>
 
   <div class="field">
-    <%= f.label :date %><br />
+    <%= f.label :date, class: "card" %><br />
     <%= f.text_field :date %>
   </div>
 

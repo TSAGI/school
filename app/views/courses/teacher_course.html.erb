@@ -1,26 +1,31 @@
-<h1 class="title"><%= @course.name%></h1>
+<h1 class="mini_title"><%= @course.name%></h1>
 
-<div class = "wrapper">
-    <p><%=link_to "Back to Courses", teacher_courses_path, class: "back_button"%></p>
-    <p><%=link_to "Back to Home Page", root_path, class: "back_button"%></p>
-</div>
-
-<div class="actions">
-    <%= link_to "Revise Course", edit_course_path(@course), class: "back_button" %>
+<div class="buttons">
+    <div class="child buttons-child1">
+        <%= link_to "Revise Course", edit_course_path(@course), class: "back_button" %>
+    </div>
+    <div class="child buttons-child1">  
+        <%=link_to "Delete Course", course_path(@course), method: :delete, 
+        data: {confirm: "Are you sure you want to delete this course?"}, class: "back_button"%>
+    </div>
 </div>
 
 <div class="container">
     <div class="description">
-        <p>Description: <%= @course.description%></p>
-        <p>Day: Every <%= @course.day%> from <%=@course.time%>.</p>
-        <p>Date: <%= @course.date%>.</p>
+        <p><span class="card">Description: <%= @course.description%></span></p>
+        <p><span class="card">Day: Every <%= @course.day%> from <%=@course.time%>.</span></p>
+        <p><span class="card">Date: <%= @course.date%>.</span></p>
 
-        <h4 class="enrolled">Students Enrolled in this Course</h4>
+        <h3 class="mini_title">Students Enrolled in this Course</h3>
         
             <% @students.each do |s| %>
             <% @registered = @selection.find_by(student_id: s.id) %>
             <%if @registered%>
-                <p><%=s.first_name%> <%=s.last_name%></p>
+            <div class="container">
+                <div class="description">
+                <p><span class="card"><%=s.first_name%> <%=s.last_name%></span></p>
+                </div>
+            <div>
             <% end end %>
     </div>
 </div>

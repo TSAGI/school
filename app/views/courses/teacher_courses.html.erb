@@ -1,5 +1,4 @@
-<h1 class="title">my courses</h1>
- <p><%=link_to "Back to Home Page", root_path, class: "back_button"%></p>
+<h1 class="mini_title">my courses</h1>
 
 <div class="actions">
     <%= link_to "Add A Course", new_course_path, class: "back_button" %>
@@ -9,7 +8,7 @@
   <div class="description">
     <% @courses.each do |c| %>
       <%if current_teacher.id == c.teacher_id%>
-      <p><%=link_to c.name, teacher_course_path(c), class: "description"%> </p>
+      <p><%=link_to c.name, teacher_course_path(c), class: "description card"%> </p>
     <% end end %>
   </div>
 </div>

@@ -1,27 +1,18 @@
-<h1 class="title"><%= @course.name%></h1>
-
-<div class = "wrapper">
-        <%if current_student%>
-            <p><%=link_to "Back to Courses", student_courses_path, class: "back_button"%></p>
-        <%else%>
-            <p><%=link_to "Back to Courses", courses_path, class: "back_button"%></p>
-        <%end%>
-    <p><%=link_to "Back to Home Page", root_path, class: "back_button"%></p>
-</div>
+<h1 class="mini_title"><%= @course.name%></h1>
 
 <div class="container">
     <div class="description">
-        <p>Description: <%= @course.description%></p>
-        <p>Day: Every <%= @course.day%> from <%=@course.time%>.</p>
-        <p>Date: <%= @course.date%>.</p>
-        <p>Instructor: <%=@teacher.first_name%> <%=@teacher.last_name%></p>
+        <p><span class="card">Description: <%= @course.description%></span></p>
+        <p><span class="card">Day: Every <%= @course.day%> from <%=@course.time%>.</span></p>
+        <p><span class="card">Date: <%= @course.date%>.</span></p>
+        <p><span class="card">Instructor: <%=@teacher.first_name%> <%=@teacher.last_name%></span></p>
 
     <%if @reviews.any?%>
         <div class="container">
             <div class="description">
-                 <h4 class="enrolled">Reviews</h4>
+                 <h4 class="enrolled"><span class="card">Reviews</span></h4>
         <%@reviews.each do |r|%>
-           <p> <span class="review_name"><%=Student.find(r.student_id).first_name%>:</span> "<%=r.message%>"</p>
+           <p class="card"> <span class="review_name"><%=Student.find(r.student_id).first_name%>:</span> "<%=r.message%>"</p>
         <%end%>
             </div>
         </div>  

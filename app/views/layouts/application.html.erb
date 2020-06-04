@@ -10,7 +10,6 @@
   </head>
 
   <body>
-    <%= yield %>
         <div id = "menu">
           <%if current_student%>
             <span style="color:gold", class="menu_item">Student: <%=current_student.first_name%>
@@ -29,5 +28,7 @@
           <%end%>
           <%=link_to "About", about_path, class: "menu_item"%>
         </div>
+        <h1 class="title"><%= link_to "TORTECH SCHOOL OF IT", root_path, class: "title"%></h1>
+    <%= yield %>
   </body>
 </html>

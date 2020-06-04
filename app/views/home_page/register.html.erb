@@ -1,6 +1,4 @@
-<h1 class = "title">Registration Form</h1>
-
-<p><%=link_to "Back to Home Page", root_path, class: "back_button"%>
+<h1 class = "mini_title">Registration Form</h1>
 
 <%= form_for :teachers, url: teacher_registration_path do |f| %>
 
@@ -10,25 +8,25 @@
 </div>
 
   <div class="field">
-    <%= f.label :first_name %><br />
+    <%= f.label :first_name, class: "card"%><br />
     <%= f.text_field :first_name%>
   </div>
   <div class="field">
-    <%= f.label :last_name %><br />
+    <%= f.label :last_name, class: "card" %><br />
     <%= f.text_field :last_name%>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email, class: "card" %><br />
     <%= f.email_field :email%>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
+    <%= f.label :password, class: "card" %><br />
     <%= f.password_field :password %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation, class: "card" %><br />
     <%= f.password_field :password_confirmation %>
   </div>
 

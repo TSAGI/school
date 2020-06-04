@@ -6,10 +6,11 @@ class CoursesStudentsController < ApplicationController
         @teachers = Teacher.all
         @teacher = Teacher.find(@course.teacher_id)
         @registered = CourseStudent.find_by(student_id: current_student.id, course_id: @course.id)
-        
+        @confirm = ""
         @button = "Register"    
         if @registered
             @button = "Drop Course"
+            @confirm = "Are you sure you want to drop this course?"
         end
         
         @path = "/courses_students"
@@ -25,19 +26,15 @@ class CoursesStudentsController < ApplicationController
         @course = Course.find(params[:courses_students][:course_id])
         @course_student.course_id = @course.id
         @course_student.student_id = current_student.id
-        
-        if @course_student.save
-            redirect_to student_courses_path
-        else
-            redirect_to new_courses_student_path(:course_id => "#{@course.id}")
-        end        
+        @course_student.save
+        redirect_to new_courses_student_path(@course) 
     end
 
     def destroy
         @course = Course.find(params[:courses_students][:course_id])
         @course_student = CourseStudent.find_by(student_id: current_student.id, course_id: @course.id)
         @course_student.destroy
-        redirect_to student_courses_path
+        redirect_to new_courses_student_path(@course) 
     end
 
     

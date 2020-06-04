@@ -1,11 +1,9 @@
-<h1 class="title">Available Courses</h1>
-
-<p><%= link_to "Back to Home Page", root_path, class: "back_button"%></p>
+<h1 class="mini_title">Available Courses</h1>
 
 <div class="container">
   <div>
     <% @courses.each do |c| %>
-      <p><%=link_to c.name, course_path(c), class:"description"%> </p>
+      <p><%=link_to c.name, course_path(c), class:"description card"%> </p>
     <% end %>
   </div>
 </div>

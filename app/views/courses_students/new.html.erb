@@ -1,24 +1,19 @@
-<h1 class="title"><%= @course.name%></h1>
-
-<div class = "wrapper">
-    <p><%=link_to "Back to Courses", student_courses_path, class: "back_button"%></p>
-    <p><%=link_to "Back to Home Page", root_path, class: "back_button"%></p>
-</div>
+<h1 class="mini_title"><%= @course.name%></h1>
 
 <%= form_for :courses_students, url: @path, method: @method do |f| %>
 
 <div class="actions">
-    <%=f.submit @button, class: "back_button"%>
+    <%=f.submit @button, data: {confirm: @confirm}, class: "back_button"%>
 </div>
 
 <%= f.hidden_field :course_id, :value => @course.id %>
 
 <div class="container">
     <div class="description">
-        <p>Description: <%= @course.description%></p>
-        <p>Day: Every <%= @course.day%> from <%=@course.time%>.</p>
-        <p>Date: <%= @course.date%>.</p>
-        <p>Instructor: <%=@teacher.first_name%> <%=@teacher.last_name%></p>
+        <p><span class="card">Description: <%= @course.description%></span></p>
+        <p><span class="card">Day: Every <%= @course.day%> from <%=@course.time%>.</span></p>
+        <p><span class="card">Date: <%= @course.date%>.</span></p>
+        <p><span class="card">Instructor: <%=@teacher.first_name%> <%=@teacher.last_name%></span></p>
     </div>
 </div>
 
@@ -43,8 +38,8 @@
 <%if @review%>
  <div class="container">
     <div class="description">
-        <h4 class="enrolled">My Review</h4>
-        <p><%=@review.message%></p>
+        <h4 class="enrolled"><span class="card">My Review</span></h4>
+        <p class="card"><%=@review.message%></p>
     </div>
 </div>
 <%end%>
